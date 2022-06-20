@@ -1,0 +1,12 @@
+- graphical component of team scores
+- chart js support
+- test multiple players placing bets and multiple events 
+- how to add quiz night as an event? 
+
+todo befoire:
+
+add matches
+CHANGE PASSWORD CHANGE REDIRECT URL IN URLS.PY
+
+things to remember:
+change start time to 1988 when match finishes and adding winner

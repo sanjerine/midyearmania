@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="text-light">
+  <h2 class="title">leaderboard</h2>
+  <div class="content_bit">
+      <table class="tabl">
+        <thead>
+          <tr>
+            <th>place</th>
+            <th>player</th>
+            <th>team</th>
+            <th>points</th>
+          </tr>
+        </thead>
+        <tbody>
+      {% for user in customuser_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.team }}</td>
+            <td>{{ user.points }}</td>
+          </tr>
+      {% endfor %}
+        </tbody>
+      </table>
+  </div>
+</div>
+{% endblock %}

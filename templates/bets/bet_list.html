@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="text-light">
+  <h2 class="title">bet list</h2>
+  <div style="text-align:center;">my total points: <b>{{net_points}}</b> </div>
+  <div class="content_bit">
+  {% if bet_list %}
+    <table class="tabl">
+      <thead>
+        <th>event</th>
+        <th>choice</th>
+        <th>amount</th>
+        <th>return</th>
+      </thead>
+      <tbody>
+    {% for bet, status in bet_list %}
+        <tr>
+          <td>{{ bet.match }}</td>
+          <td>{{ bet.choice }}</td>
+          <td>{{ bet.amount }}</td>
+          {% if status > 0 %}
+          <td style="color:green; font-weight:bold">+{{ status }}</td>
+          {% else %}
+          <td style="color:red; font-weight:bold">{{ status }}</td>
+          {% endif %}
+        </tr>
+    {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>You haven't placed any bets yet!</p>
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

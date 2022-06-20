@@ -1,0 +1,81 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="text-light">
+    {% if user.is_authenticated %}
+    <p style="text-align: center; background-color: rgba(255, 255, 255, 0.24);">hi, {{ user.username }}. you've currently got {{user.get_points}} points!</p>
+    {% endif %}
+    <h2 class="title">scores</h2>
+    <div class="team_scores content_bit">
+      <div style="font-size:2em">
+        {{t1.name}}
+        <strong>{{t1.count}}</strong>
+      </div>
+      <div style="font-size:1.85em">
+        {{t2.name}}
+        <strong>{{t2.count}}</strong>
+      </div>
+      <div style="font-size:1.75em">
+        {{t3.name}}
+        <strong>{{t3.count}}</strong>
+      </div>
+      <div style="font-size:1.5em">
+        {{t4.name}}
+        <strong>{{t4.count}}</strong>
+      </div>
+    </div>
+    <br>
+    {% if matches_len|length > 0 %}
+    <h3 class="title">matches</h3>
+    <div class="content_bit">
+      <table class="tabl">
+        <thead>
+          <tr>
+            <th class="cell">event</th>
+            <th class="cell">pool</th> 
+            <th class="cell">start time</th>
+            <th class="cell">teams</th>
+            <th class="cell">bet</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for match, pool in matches_pool %}
+          <tr>
+            <td><a class="text-light" href="{% url 'match-detail' match.id%}">{{match.name}}</a></td>
+            <td>{{pool}}</td>
+            <td>{{match.start_time|time:"H:i"}}</td>
+            <td>{{match.teams.all|join:", "}}</td>
+            <td><a class="text-light text-decoration-none" href="{% url 'place-bet' match.id%}"><div class="bet_button"><b>place bet!</b></div></a></td>
+          </tr>
+          {% endfor %}   
+        </tbody>
+      </table>
+    </div>
+    {% endif %}   
+    {% if matches_past_len|length > 0 %}
+    <h3 class="title">past matches</h3>
+    <div class="content_bit">
+      <table class="tabl">
+        <thead>
+          <tr>
+            <th class="cell">event</th>
+            <th class="cell">pool</th>
+            <th class="cell">teams</th>
+            <th class="cell">winner</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for match, pool in matches_past_pool %}
+          <tr>
+            <td><a class="text-light" href="{% url 'match-detail' match.id%}">{{match.name}}</a></td>
+            <td>{{pool}}</td>
+            <td>{{match.teams.all|join:", "}}</td>
+            <td>{{match.winner}}</td>
+          </tr>
+          {% endfor %} 
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}

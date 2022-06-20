@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="h4 text-light">
+  {% if form.errors %}
+  <div style="display:flex; align-items:center; flex-direction:column; text-align:center"><p>Your username and password didn't match. Please try again.</p></div>
+  {% endif %}
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table class="tabl">
+      <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td><input style="width:20vh" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></td>
+      </tr>
+      <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <td><input style="width:20vh" type="password" name="password" autocomplete="current-password" required="" id="id_password"></td>
+      </tr>
+    </table>
+    <br>
+    <div style="width:100%; display:flex; justify-content:center;">
+      <input style="margin:auto; background-color:transparent !important;" class="text-light bet_button" type="submit" value="login">
+    </div>
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+</div>
+{% endblock %}

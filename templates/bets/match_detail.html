@@ -1,0 +1,66 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="text-light">
+  <h1 class="title">{{ match.name }}</h1>
+  {% if is_Done == False %}
+  <a class="text-light text-decoration-none" href="{% url 'place-bet' match.id%}">
+    <div style="width:50%; margin-left:auto; margin-right:auto" class="bet_button title">Place a bet!</div>
+  </a>
+  <br>
+  {% endif %}  
+  <div class="content_bit">
+    {% if is_Done == True %}
+    <h3 class="title">winner: {{match.winner}} </h3>
+    {% endif %}
+    <table class="tabl">
+      <thead>
+        <tr>
+          <th>team</th>
+          <th>odds</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{match.teams.all.0}}</td>
+          <td>{{odds.0}}</td>          
+        </tr>
+        <tr>
+          <td>{{match.teams.all.1}}</td>
+          <td>{{odds.1}}</td>          
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <p><b>start time:</b> {{match.start_time|time:"H:i"}}</p>
+    <p><b>points for winning:</b> {{ match.points_awarded }}</p>
+    <p><b>total betting pool:</b> {{ total_pool }}</p>
+  </div>
+  <br>
+  <h3 class="title">bets</h3>
+  <div class="content_bit">
+    {% if bets_list|length > 0 %}
+    <table class="tabl">
+      <thead>
+        <tr>
+          <th>player</th>
+          <th>amount</th>
+          <th>team</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bet in bets_list %}
+          <tr>
+            <td>{{ bet.0 }}</td>
+            <td>{{ bet.2 }}</td>
+            <td>{{ bet.1 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>there arent any bets yet! place one now to claim the pool!</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
