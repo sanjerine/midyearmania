@@ -10,11 +10,28 @@ I decided to build a website to allow users to 'gamble' with their points on the
 
 📸 **Screenshots**:
 
+Home Page:
+
 ![Home Page](/screenshots/home.PNG)
+
+Player Leaderboard: 
+
 ![Leaderboard](/screenshots/leaderboard.PNG)
-![Dropdown](/screenshots/dropdown.PNG)
+
+My Bets:
+
 ![Bets](/screenshots/bets.PNG)
+
+Dropdown Navbar:
+
+![Dropdown](/screenshots/dropdown.PNG)
+
+Event Page:
+
 ![Event Page](/screenshots/event.PNG)
+
+Admin Panel:
+
 ![Admin Panel](/screenshots/admin.PNG)
 
 ## Features
