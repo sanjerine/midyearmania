@@ -8,6 +8,21 @@ Every mid-semester break I run a small tournament with my friends where we are s
 
 I decided to build a website to allow users to 'gamble' with their points on the outcomes of other events. Markets are dynamic, with odds changing depending on the liquidity of an event. When an event's time concludes, it is unable to be wagered on. Users are sorted into teams, and the status of each team is displayed on the homepage as the event runs. The wninning team is the team with the highest average points!
 
+## Features
+
+- **Dynamic Betting Market**: Market system calculates and distributes payouts. Winners receive their rewards as a percentage of the available betting pool, ensuring dynamic odds and payouts that reflect the community's sentiments.
+- **Data-Validated Betting**: Data validation mechanisms are in place to prevent arbitrage betting, ensuring fair play and maintaining the integrity of the gaming experience.
+- **User Authentication**: Users can log in to interact with the system, and change their password via email if forgotten.
+- **Leaderboards & Statistics**: Track top players, view team and event statistics, and gain insights into the betting patterns and strategies of the community.
+- **Admin Panel**: Allows easy updating of all data - models saved back propagate through and update statistics automatically when a match winner is added.
+
+## Technology Stack
+
+- **Backend**: Django (Version: 4.2.5)
+- **Database**: MySQL
+- **Frontend**: Bootstrap
+- **Deployment**: A2Hosting 
+- 
 📸 **Screenshots**:
 
 Home Page:
@@ -33,20 +48,6 @@ Event Page:
 Admin Panel:
 
 ![Admin Panel](/screenshots/admin.PNG)
-
-## Features
-
-- **Dynamic Betting Market**: Market system calculates and distributes payouts. Winners receive their rewards as a percentage of the available betting pool, ensuring dynamic odds and payouts that reflect the community's sentiments.
-- **Data-Validated Betting**: Data validation mechanisms are in place to prevent arbitrage betting, ensuring fair play and maintaining the integrity of the gaming experience.
-- **Leaderboards & Statistics**: Track top players, view team and event statistics, and gain insights into the betting patterns and strategies of the community.
-- **Admin Panel**: Allows easy updating of all data - models saved back propagate through and update statistics automatically when a match winner is added.
-
-## Technology Stack
-
-- **Backend**: Django (Version: 4.2.5)
-- **Database**: MySQL
-- **Frontend**: Bootstrap
-- **Deployment**: A2Hosting 
 
 ## Installation & Setup
 
