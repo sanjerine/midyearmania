@@ -10,12 +10,12 @@ I decided to build a website to allow users to 'gamble' with their points on the
 
 📸 **Screenshots**:
 
-![Home Page](/screenshots/home.png)
-![Leaderboard](/screenshots/leaderboard.png)
-![Dropdown](/screenshots/dropdown.png)
-![Bets](/screenshots/bets.png)
-![Event Page](/screenshots/event.png)
-![Admin Panel](/screenshots/admin.png)
+![Home Page](/screenshots/home.PNG)
+![Leaderboard](/screenshots/leaderboard.PNG)
+![Dropdown](/screenshots/dropdown.PNG)
+![Bets](/screenshots/bets.PNG)
+![Event Page](/screenshots/event.PNG)
+![Admin Panel](/screenshots/admin.PNG)
 
 ## Features
 
